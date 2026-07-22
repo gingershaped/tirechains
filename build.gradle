@@ -49,8 +49,36 @@ repositories {
         url = "https://maven.createmod.net"
     }
     maven {
-        name = 'Gegy (Registrate)'
-        url = 'https://maven.gegy.dev/releases'
+        name = 'IThundxr (Registrate)'
+        url = 'https://maven.ithundxr.dev/snapshots'
+    }
+    maven {
+        name = 'BlameJared'
+        url = 'https://maven.blamejared.com/'
+    }
+    maven {
+        name = 'FTB'
+        url = 'https://maven.ftb.dev/releases/'
+    }
+    maven {
+        name = 'JourneyMap'
+        url = "https://jm.gserv.me/repository/maven-public"
+        content {
+            includeGroup "info.journeymap"
+            includeGroup "mysticdrew"
+        }
+    }
+    maven {
+        name = 'Curios'
+        url = 'https://maven.theillusivec4.top/'
+    }
+    maven {
+        name = 'Squiddev'
+        url = 'https://maven.squiddev.cc/'
+    }
+    maven {
+        name = 'Architectury'
+        url = 'https://maven.architectury.dev/'
     }
 }
 
@@ -167,10 +195,14 @@ dependencies {
 
     implementation "thedarkcolour:kotlinforforge-neoforge:${loader_version}"
     implementation "com.tterrag.registrate:Registrate:${registrate_version}"
-    compileOnly "com.simibubi.create:create-${minecraft_version}:${create_maven_version}:slim"
-    compileOnly "dev.ryanhcode.offroad:offroad-common-${minecraft_version}:${simulated_version}"
-    localRuntime "maven.modrinth:create-aeronautics:${simulated_version}+mc${minecraft_version}"
-    localRuntime "maven.modrinth:create:${create_version}+mc${minecraft_version}"
+    implementation "com.simibubi.create:create-${minecraft_version}:${create_maven_version}:slim"
+    compileOnly "net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}"
+//    compileOnly "dev.ryanhcode.offroad:offroad-common-${minecraft_version}:${simulated_version}"
+//    runtimeOnly "maven.modrinth:create-aeronautics:${simulated_version}+mc${minecraft_version}"
+    compileOnly files("vendor/offroad-neoforge-${minecraft_version}-${simulated_version}.jar")
+    compileOnly files("vendor/simulated-neoforge-${minecraft_version}-${simulated_version}.jar")
+    runtimeOnly files("vendor/create-aeronautics-bundled-${minecraft_version}-${simulated_version}.jar")
+    runtimeOnly "maven.modrinth:sable:2.+"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -185,6 +217,8 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_name               : mod_name,
             mod_license            : mod_license,
             mod_version            : mod_version,
+            simulated_version_range: simulated_version_range,
+            create_version_range:    create_version_range,
     ]
     inputs.properties replaceProperties
     expand replaceProperties

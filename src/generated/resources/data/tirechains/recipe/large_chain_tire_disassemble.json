@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tirechains:large_chain_tire"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:chain"
+  }
+}

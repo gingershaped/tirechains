@@ -25,3 +25,24 @@ Adds tires with snow chains for driving on slick surfaces.
     versionRange="${minecraft_version_range}"
     ordering="NONE"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="create"
+    type="required"
+    versionRange = "${create_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="simulated"
+    type="required"
+    versionRange = "${simulated_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="offroad"
+    type="required"
+    versionRange = "${simulated_version_range}"
+    ordering="AFTER"
+    side="BOTH"
