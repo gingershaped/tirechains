@@ -197,12 +197,9 @@ dependencies {
     implementation "com.tterrag.registrate:Registrate:${registrate_version}"
     implementation "com.simibubi.create:create-${minecraft_version}:${create_maven_version}:slim"
     compileOnly "net.createmod.ponder:ponder-neoforge:${ponder_version}+mc${minecraft_version}"
-//    compileOnly "dev.ryanhcode.offroad:offroad-common-${minecraft_version}:${simulated_version}"
-//    runtimeOnly "maven.modrinth:create-aeronautics:${simulated_version}+mc${minecraft_version}"
-    compileOnly files("vendor/offroad-neoforge-${minecraft_version}-${simulated_version}.jar")
-    compileOnly files("vendor/simulated-neoforge-${minecraft_version}-${simulated_version}.jar")
-    runtimeOnly files("vendor/create-aeronautics-bundled-${minecraft_version}-${simulated_version}.jar")
-    runtimeOnly "maven.modrinth:sable:2.+"
+    compileOnly "dev.ryanhcode.offroad:offroad-common-${minecraft_version}:${simulated_version}"
+    runtimeOnly "maven.modrinth:create-aeronautics:${simulated_version}+mc${minecraft_version}"
+    runtimeOnly "maven.modrinth:sable:${sable_version}+mc${minecraft_version}"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
