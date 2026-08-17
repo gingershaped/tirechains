@@ -11,6 +11,7 @@ authors="Ginger & Esme"
 description='''
 Adds tires with snow chains for driving on slick surfaces.
 '''
+logoFile = "icon.png"
 
 [[dependencies.${mod_id}]]
     modId="neoforge"
